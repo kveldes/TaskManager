@@ -13,28 +13,32 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Project {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long project_id;
-	
+
 	private String name;
-	
+
 	@Column(columnDefinition = "TEXT")
 	private String description;
-	
+
 	private LocalDate startDate;
-	    
+
 	private LocalDate endDate;
-	
+
 	@Enumerated(EnumType.STRING)
 	private StatusOfProject status;
-	   
-	//Timestamp
+
+	// Timestamp
 	@Column(name = "created_at", updatable = false)
 	private Instant createdAt;
 
-	//Constructor
+	// Constructors
+
+	public Project() {
+	}
+
 	public Project(String name, String description, LocalDate startDate, LocalDate endDate, StatusOfProject status,
 			Instant createdAt) {
 		super();
@@ -101,11 +105,5 @@ public class Project {
 	public void setCreatedAt(Instant createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
-	
-	
 
-
-	
 }
