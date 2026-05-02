@@ -1,7 +1,5 @@
 package com.kveldes.taskmanager.domain;
 
-public enum StatusOfProject {
+public enum StatusOfSubProject {
 	ACTIVE, ARCHIVED
-
-	
 }

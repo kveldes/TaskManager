@@ -2,7 +2,9 @@ package com.kveldes.taskmanager.domain;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,6 +12,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Project {
@@ -49,13 +52,22 @@ public class Project {
 		this.status = status;
 		this.createdAt = createdAt;
 	}
+	//-=============================================================================================================-//
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
+	private List<SubProject> subprojects;
 
-	public Long getProject_id() {
-		return project_id;
+	public List<SubProject> getSubprojects() {
+		return subprojects;
 	}
 
-	public void setProject_id(Long project_id) {
-		this.project_id = project_id;
+	public void setSubprojects(List<SubProject> subprojects) {
+		this.subprojects = subprojects;
+	}
+	//-=============================================================================================================-//
+	
+	// Getters & Setters
+	public Long getProject_id() {
+		return project_id;
 	}
 
 	public String getName() {
