@@ -2,16 +2,11 @@ package com.kveldes.taskmanager;
 
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import org.h2.server.web.JakartaWebServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
 
 import com.kveldes.taskmanager.domain.Project;
 import com.kveldes.taskmanager.domain.ProjectRepository;
@@ -34,14 +29,7 @@ public class TaskmanagerApplication implements CommandLineRunner {
 		logger.info("Application started");
 	}
 
-	// For H2
-	@Bean
-	public ServletRegistrationBean<JakartaWebServlet> h2ConsoleServlet() {
-		ServletRegistrationBean<JakartaWebServlet> bean = new ServletRegistrationBean<>(new JakartaWebServlet(),
-				"/h2-console/*");
-		bean.addInitParameter("webAllowOthers", "true");
-		return bean;
-	}
+
 
 	@Override
 	public void run(String... args) throws Exception {
