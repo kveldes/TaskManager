@@ -18,7 +18,7 @@ public class Task {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long task_id;
+	private Long taskId;
 
 	private String name;
 
@@ -28,7 +28,7 @@ public class Task {
 	@Enumerated(EnumType.STRING)
 	private TaskStatus status;
 
-	private LocalDate due_date;
+	private LocalDate dueDate;
 
 	@Enumerated(EnumType.STRING)
 	private TaskPriority priority;
@@ -41,7 +41,7 @@ public class Task {
 		this.name = name;
 		this.text = text;
 		this.status = status;
-		this.due_date = due_date;
+		this.dueDate = due_date;
 		this.priority = priority;
 	}
 
@@ -60,8 +60,8 @@ public class Task {
 	}
 
 	// -=============================================================================================================-//
-	public Long getTask_id() {
-		return task_id;
+	public Long getTaskId() {
+		return taskId;
 	}
 
 	public String getName() {
@@ -88,12 +88,12 @@ public class Task {
 		this.status = status;
 	}
 
-	public LocalDate getDue_date() {
-		return due_date;
+	public LocalDate getDueDate() {
+		return dueDate;
 	}
 
-	public void setDue_date(LocalDate due_date) {
-		this.due_date = due_date;
+	public void setDueDate(LocalDate due_date) {
+		this.dueDate = due_date;
 	}
 
 	public TaskPriority getPriority() {

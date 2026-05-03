@@ -19,7 +19,7 @@ public class Project {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long project_id;
+	private Long projectId;
 
 	private String name;
 
@@ -66,8 +66,8 @@ public class Project {
 	//-=============================================================================================================-//
 	
 	// Getters & Setters
-	public Long getProject_id() {
-		return project_id;
+	public Long getProjectId() {
+		return projectId;
 	}
 
 	public String getName() {

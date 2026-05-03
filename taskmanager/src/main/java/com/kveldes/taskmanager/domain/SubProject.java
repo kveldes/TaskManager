@@ -20,7 +20,7 @@ public class SubProject {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long sub_project_id;
+	private Long subProjectId;
 
 	private String name;
 
@@ -86,8 +86,8 @@ public class SubProject {
 	}
 	// -=============================================================================================================-//
 
-	public Long getSub_project_id() {
-		return sub_project_id;
+	public Long getSubProjectId() {
+		return subProjectId;
 	}
 
 	public String getName() {
