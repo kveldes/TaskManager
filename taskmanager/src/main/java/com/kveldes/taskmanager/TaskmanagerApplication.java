@@ -81,5 +81,4 @@ public class TaskmanagerApplication implements CommandLineRunner {
 		logger.info("Dummy data for all entities initialized successfully!");
 	}
 
-/////////////////////////
 }
